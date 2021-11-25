@@ -52,6 +52,11 @@ public class AuthController {
         return ApiResponse.ofSuccess(new JwtResponse(jwt));
     }
 
+    /**
+     * 退出
+     * @param request
+     * @return
+     */
     @PostMapping("/logout")
     public ApiResponse logout(HttpServletRequest request) {
         try {
