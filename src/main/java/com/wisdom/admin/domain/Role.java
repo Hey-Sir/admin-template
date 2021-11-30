@@ -3,6 +3,8 @@ package com.wisdom.admin.domain;
 import lombok.*;
 import lombok.experimental.Accessors;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
@@ -18,22 +20,12 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Role {
-
-    private Long id;
+@Entity
+@Table(name = "sec_role")
+public class Role extends IdentityDomain {
 
     private String name;
 
     private String description;
-
-    private Date createTime;
-
-    private String createUser;
-
-    private Date updateTime;
-
-    private String updateUser;
-
-    private Boolean isDelete;
 
 }

@@ -3,6 +3,8 @@ package com.wisdom.admin.domain;
 import lombok.*;
 import lombok.experimental.Accessors;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
@@ -18,9 +20,9 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
-
-    private Long id;
+@Entity
+@Table(name = "sec_user")
+public class User extends IdentityDomain {
 
     private String username;
 
@@ -43,14 +45,4 @@ public class User {
      * 状态，启用-1，禁用-0
      */
     private Integer status;
-
-    private Date createTime;
-
-    private String createUser;
-
-    private Date updateTime;
-
-    private String updateUser;
-
-    private Boolean isDelete;
 }

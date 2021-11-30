@@ -35,6 +35,11 @@ public class UserController {
     @Autowired
     private RoleService roleService;
 
+    /**
+     * 用户信息
+     * @param authentication
+     * @return
+     */
     @GetMapping("/info")
     public ApiResponse info(Authentication authentication) {
         UserPrincipal userPrincipal = (UserPrincipal) authentication.getPrincipal();

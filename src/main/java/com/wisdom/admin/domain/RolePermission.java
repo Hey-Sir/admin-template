@@ -1,8 +1,12 @@
 package com.wisdom.admin.domain;
 
+import com.wisdom.admin.domain.unionkey.RolePermissionKey;
 import lombok.*;
 import lombok.experimental.Accessors;
 
+import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 
 /**
@@ -18,20 +22,14 @@ import java.util.Date;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
+@Table(name = "sec_role_permission")
 public class RolePermission {
 
-    private Long roleId;
-
-    private Long permissionId;
-
-    private Date createTime;
-
-    private String createUser;
-
-    private Date updateTime;
-
-    private String updateUser;
-
-    private Boolean isDelete;
+    /**
+     * 主键
+     */
+    @EmbeddedId
+    private RolePermissionKey id;
 
 }
